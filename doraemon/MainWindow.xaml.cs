@@ -12,6 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit;
+using Emgu.CV;
+using Emgu.CV.Structure;
+using Emgu.CV.UI;
+using Emgu.CV.CvEnum;
+using System.IO;
 
 namespace doraemon
 {
