@@ -92,9 +92,10 @@ namespace doraemon
                         float[] humanPosition = getPersonPosition(human);
                         // Make tempate of objects to detect, manually.
                         // Process ColorFrame : Returns the position of processed blob
-                        int[] blobPosition = ImageProcess.processImage(colorFrame);
+                        Thing test = new Thing("bottle");
+                        int[] blobPosition = Thing.findObject(colorFrame);
                         short blobDepth = getDepthAtPoint(blobPosition, depthFrame);
-
+                        // 
                     }
                 }
             }
