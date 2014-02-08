@@ -97,5 +97,31 @@ namespace doraemon
                 }
             }
         }
+
+        float[] getPersonPosition(Skeleton skel)
+        {
+            float[] pos = new float[3];
+            foreach (Joint joint in skel.Joints)
+            {
+                if (joint.JointType == JointType.Head)
+                {
+                    if ((joint.TrackingState == JointTrackingState.Tracked) || (joint.TrackingState == JointTrackingState.Inferred))
+                    {
+                        pos[0] = joint.Position.X;
+                        pos[1] = joint.Position.Y;
+                        pos[2] = joint.Position.Z;
+                    }
+                    else
+                    {
+                        return null;
+                    } 
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return pos;
+        }
     }
 }
