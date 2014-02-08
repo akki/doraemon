@@ -98,6 +98,7 @@ namespace doraemon
             }
         }
 
+        // Returns position [x, y, z] of person from a skeleton
         float[] getPersonPosition(Skeleton skel)
         {
             float[] pos = new float[3];
@@ -124,6 +125,7 @@ namespace doraemon
             return pos;
         }
 
+        // Returns first skeleton from SkeletonFrame
         Skeleton getSkeleton(SkeletonFrame frame)
         {
             Skeleton[] skeletons = null;
@@ -140,6 +142,22 @@ namespace doraemon
             else
             {
                 return null;
+            }
+        }
+
+        // Returns depth at a pixel position from a depth frame
+        short getDepthAtPoint(int[] position, DepthImageFrame frame)
+        {
+            if (frame != null)
+            {
+                frame.CopyDepthImagePixelDataTo(this.depthPixels);
+                int pix = 640 * position[1] - 1 + position[0];
+                short depth = depthPixels[pix].Depth;
+                return depth;
+            }
+            else
+            {
+                return 0;
             }
         }
     }
