@@ -93,8 +93,8 @@ namespace doraemon
                         // Make tempate of objects to detect, manually.
                         // Process ColorFrame : Returns the position of processed blob
                         Thing test = new Thing("bottle");
-                        int[] blobPosition = Thing.findObject(colorFrame);
-                        short blobDepth = getDepthAtPoint(blobPosition, depthFrame);
+                        test.findCoordinate(colorFrame);
+                        short blobDepth = getDepthAtPoint(test.position, depthFrame);
                         // 
                     }
                 }
