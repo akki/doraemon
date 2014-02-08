@@ -13,12 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
-using Microsoft.Kinect.Toolkit;
+//using Microsoft.Kinect.Toolkit;
 using System.IO;
-using Emgu.CV;
-using Emgu.CV.Structure;
-using Emgu.CV.UI;
-using Emgu.CV.CvEnum;
 
 namespace doraemon
 {
@@ -94,11 +90,11 @@ namespace doraemon
                     {
                         Skeleton human = getSkeleton(skeletonFrame);
                         float[] humanPosition = getPersonPosition(human);
+                        // Make tempate of objects to detect, manually.
                         // Process ColorFrame : Returns the position of processed blob
                         Thing test = new Thing("bottle");
-                        test.findCoordinate(colorFrame);
-                        short blobDepth = getDepthAtPoint(test.position, depthFrame);
-                        Bot x = new Bot();
+                        int[] blobPosition = Thing.findObject(colorFrame);
+                        short blobDepth = getDepthAtPoint(blobPosition, depthFrame);
                         // 
                     }
                 }
