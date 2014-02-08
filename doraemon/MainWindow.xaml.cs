@@ -123,5 +123,24 @@ namespace doraemon
             }
             return pos;
         }
+
+        Skeleton getSkeleton(SkeletonFrame frame)
+        {
+            Skeleton[] skeletons = null;
+            if (frame != null)
+            {
+                skeletons = new Skeleton[frame.SkeletonArrayLength];
+                frame.CopySkeletonDataTo(skeletons);
+            }
+
+            if (skeletons.Length != 0)
+            {
+                return skeletons[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
