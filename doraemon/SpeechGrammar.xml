@@ -1,0 +1,46 @@
+﻿<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <tag>BOTTLE</tag>
+        <one-of>
+          <item> bottles </item>
+          <item> bottle </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>BOX</tag>
+        <one-of>
+          <item> box </item>
+          <item> boxes </item>
+        </one-of>
+      </item>
+    <item>
+        <tag>STOP</tag>
+        <one-of>
+          <item> stop </item>
+          <item> freeze</item>
+        </one-of>
+      </item>
+          <item>
+        <tag>MOVE</tag>
+        <one-of>
+          <item> move </item>
+          <item> go </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>LEFT</tag>
+        <one-of>
+          <item> left </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>RIGHT</tag>
+        <one-of>
+          <item> right </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

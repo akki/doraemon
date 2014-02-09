@@ -9,7 +9,7 @@ using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using Emgu.CV.CvEnum;
 
-namespace doraemon
+namespace Microsoft.Samples.Kinect.SpeechBasics
 {
     public class Thing
     {
